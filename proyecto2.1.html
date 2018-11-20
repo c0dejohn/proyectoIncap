@@ -1,0 +1,791 @@
+<HTML>
+  <HEAD>
+     <TITLE>
+     </TITLE>
+     <STYLE>
+		 /*div.items div {display: none}
+         div.items div:target {display: block}*/
+         body{
+			 width:100%;
+			 height:100%;
+			 background-image:url("imagen1.jpg");	
+
+		 }
+		 #cuerpo{
+			 margin:auto;
+			 width:1000px;
+			 height:900px;
+			 background:#ecf7fa;
+		 }
+		 #cuerpo #encabezado{
+			 width:100%;
+			 height:100px;
+			 background:#33d4ff;
+			 font-family:Arial;
+			 font-weight:700;
+			 
+
+		 }
+		 #cuerpo #encabezado table{width:100%;height:50px;}
+		 .T1{
+			 font-size:20px;
+			 font-weight:700;
+			 font-family:Homer Simpson;
+			border-radius:1px;
+
+			
+		 }
+		 
+		 #cuerpo #fichas{
+			 width:100%;
+			 height:30px;
+			 background:#7a99a2;
+			 color:#b86605;
+			 font-family:arial;
+		 }
+		 #cuerpo #mitad{
+			 margin:auto;
+			 width:100%;
+			 height:770px;
+			 background:#545462;
+		 }
+		 #cuerpo #pie{
+			 width:100%;
+			 height:50px;
+			 background:#12aed1;
+			 color:#060606;
+			 text-align:center;
+			 font-size:12px;
+			 padding: 10px 0px 0px 0px;
+			 border-radius:2px;
+
+		 }
+         div.items div:not(:target) {display: none}
+		 div.items div:target {display: block}
+		 #cuerpo #item1, #item2, #item3{background:#7a94a2; width:100%;height:100%;font-size:10px;}
+		 #cuerpo #fichas TABLE TR TD{
+		   width:200px;
+		   height:25px;
+		   font-size:12px;
+		   text-align:center;
+		   font-family:arial;
+		   color:#ccc;
+		   background:#848484;
+		 }
+		 #cuerpo #mitad #item1 table tr td #foto{
+			 margin:auto;
+			 width:80%;
+			 height:150px;
+			 background:#ccc;
+		 }
+		 #cuerpo #mitad #item1 table tr td textarea{
+			 width:100%;
+			 height:200px;
+			 background:#ccc;
+		 }	
+		 #cuerpo #mitad #item2 table tr td textarea{
+			 width:100%;
+			 height:100px;
+			 background:#ccc;
+		 }			 	 
+		 #cuerpo #fichas TABLE TR TD a{
+		   text-decoration: none;
+		   font-size:18px;
+		   text-align:center;
+		   font-family:arial;
+		   color:#000;
+		   }
+		 #cuerpo #fichas TABLE TR TD:HOVER{
+			 BACKGROUND:#ccc;
+			 color:#000;
+		 }
+		 #cuerpo #mitad TABLE{ margin:auto;width:80%;font-size:11px;text-align:center;}
+		 #cuerpo #mitad .t1{
+			 background:#acacac;
+		 }
+		 #cuerpo #mitad TABLE TR TD input, select{
+			 width:100%;
+			 height:25px;
+			 background:#ccc;
+			 text-align:center;
+		 } 
+		/* #cuerpo #mitad #items #item3 TABLE TR TD #ti{ margin:auto;width:80%;font-size:13px;}		 
+         #cuerpo #mitad #items #item3 TABLE TR TD input, select{
+			 width:100%;
+			 height:25px;
+			 background:#ccc;
+			 text-align:center;*/
+		 }	 
+     </STYLE>
+     <SCRIPT language="JavaScript">
+        contador=0;
+        final=0;
+        // script para datos personales
+	/*	var reg=new Array(15);
+
+		function adicion(){
+		    final=contador; 
+			nombre=document.getElementById("nombre").value;
+			identificacion=document.getElementById("identificacion").value;
+			celular=document.getElementById("celular").value;
+			celular2=document.getElementById("celular2").value;
+			fn=document.getElementById("fn").value;
+			est=document.getElementById("est").value;
+			obs=document.getElementById("obs").value;
+			direccion=document.getElementById("direccion").value;
+			telefono=document.getElementById("telefono").value;
+			correo=document.getElementById("correo").value;
+			celular3=document.getElementById("celular3").value;
+			//gen=document.getElementById("genero");
+			//genero=gen.options[gen.SelectedIndex].text;
+			genero=document.getElementById("genero").value;
+			tipoc=document.getElementById("tipoc").value;
+			reg[contador] = new Array(53);
+		    reg[contador][0]=nombre;
+		    reg[contador][1]=identificacion;
+		    reg[contador][2]=celular;
+		    reg[contador][5]=celular2;
+		    reg[contador][6]=fn;
+		    reg[contador][3]=direccion;
+		    reg[contador][4]=telefono;
+		    reg[contador][7]=est;
+		    reg[contador][8]=obs;
+		    reg[contador][9]=correo;
+		    reg[contador][10]=celular3;
+		    reg[contador][11]=genero;
+		    reg[contador][12]=tipoc;
+		    alert("Registro Guardado..");
+		    contador=contador + 1;
+		    document.getElementById("nombre").value="";
+			document.getElementById("identificacion").value="";
+			document.getElementById("celular").value="";
+			document.getElementById("celular2").value="";
+			document.getElementById("fn").value="";
+			document.getElementById("est").value="";
+			document.getElementById("obs").value="";
+			document.getElementById("direccion").value="";
+			document.getElementById("telefono").value="";
+			document.getElementById("correo").value="";
+			document.getElementById("celular3").value="";
+			document.getElementById("tipoc").value="";			    
+		}
+		function siguiente(){
+		   if(contador < final ){
+			 contador=contador + 1;
+			} 
+		   document.getElementById("nombre").value=reg[contador][0];
+		   document.getElementById("identificacion").value=reg[contador][1];
+		   document.getElementById("celular").value=reg[contador][2];
+		   document.getElementById("celular2").value=reg[contador][5];
+		   document.getElementById("fn").value=reg[contador][6];
+		   document.getElementById("est").value=reg[contador][7];
+		   document.getElementById("obs").value=reg[contador][8];
+		   document.getElementById("direccion").value=reg[contador][3];
+		   document.getElementById("telefono").value=reg[contador][4];
+		   document.getElementById("correo").value=reg[contador][9];
+		   document.getElementById("celular3").value=reg[contador][10];
+		   document.getElementById("tipoc").value=reg[contador][12];
+		   
+		alert("siguiente" + contador);
+		}
+		function anterior(){
+		   if(contador > 0){
+		     contador=contador - 1;
+		   }
+		   document.getElementById("nombre").value=reg[contador][0];
+		   document.getElementById("identificacion").value=reg[contador][1];
+		   document.getElementById("celular").value=reg[contador][2];
+		   document.getElementById("celular2").value=reg[contador][5];
+		   document.getElementById("fn").value=reg[contador][6];
+		   document.getElementById("est").value=reg[contador][7];
+		   document.getElementById("obs").value=reg[contador][8];		   
+		   document.getElementById("direccion").value=reg[contador][3];
+		   document.getElementById("telefono").value=reg[contador][4];
+		   document.getElementById("correo").value=reg[contador][9];
+		   document.getElementById("celular3").value=reg[contador][10];
+		   document.getElementById("tipoc").value=reg[contador][12];		   
+		alert("anterior" + contador);
+		}
+  
+
+        function ultimo(){
+           contador=final;
+           document.getElementById("nombre").value=reg[contador][0];
+		   document.getElementById("identificacion").value=reg[contador][1];
+		   document.getElementById("celular").value=reg[contador][2];
+		   document.getElementById("celular2").value=reg[contador][5];
+		   document.getElementById("fn").value=reg[contador][6];
+		   document.getElementById("est").value=reg[contador][7];
+		   document.getElementById("obs").value=reg[contador][8];		   
+		   document.getElementById("direccion").value=reg[contador][3];
+		   document.getElementById("telefono").value=reg[contador][4];
+		   document.getElementById("correo").value=reg[contador][9];
+		   document.getElementById("celular3").value=reg[contador][10];
+		   document.getElementById("tipoc").value=reg[contador][12];	
+		   }	
+        function primero(){
+           contador=0;
+           document.getElementById("nombre").value=reg[contador][0];
+		   document.getElementById("identificacion").value=reg[contador][1];
+		   document.getElementById("celular").value=reg[contador][2];
+		   document.getElementById("celular2").value=reg[contador][5];
+		   document.getElementById("fn").value=reg[contador][6];
+		   document.getElementById("est").value=reg[contador][7];
+		   document.getElementById("obs").value=reg[contador][8];		   
+		   document.getElementById("direccion").value=reg[contador][3];
+		   document.getElementById("telefono").value=reg[contador][4];
+		   document.getElementById("correo").value=reg[contador][9];
+		   document.getElementById("celular3").value=reg[contador][10];		
+		   document.getElementById("tipoc").value=reg[contador][12];
+               }
+			function borrar(){
+		    final=contador; 
+			nombre=document.getElementById("nombre").value="";
+			identificacion=document.getElementById("identificacion").value="";
+			celular=document.getElementById("celular").value="";
+			celular2=document.getElementById("celular2").value="";
+			fn=document.getElementById("fn").value="";
+			est=document.getElementById("est").value="";
+			obs=document.getElementById("obs").value="";
+			direccion=document.getElementById("direccion").value="";
+			telefono=document.getElementById("telefono").value="";
+			correo=document.getElementById("correo").value="";
+			celular3=document.getElementById("celular3").value=""
+
+			;
+			//gen=document.getElementById("genero");
+			//genero=gen.options[gen.SelectedIndex].text;
+			genero=document.getElementById("genero").value;
+			tipoc=document.getElementById("tipoc").value;
+			reg[contador] = new Array(53);
+		    reg[contador][0]=nombre;
+		    reg[contador][1]=identificacion;
+		    reg[contador][2]=celular;
+		    reg[contador][5]=celular2;
+		    reg[contador][6]=fn;
+		    reg[contador][3]=direccion;
+		    reg[contador][4]=telefono;
+		    reg[contador][7]=est;
+		    reg[contador][8]=obs;
+		    reg[contador][9]=correo;
+		    reg[contador][10]=celular3;
+		    reg[contador][11]=genero;
+		    reg[contador][12]=tipoc;
+		    alert("Registro Borrado..");
+		    contador=contador + 1;
+		    document.getElementById("nombre").value="";
+			document.getElementById("identificacion").value="";
+			document.getElementById("celular").value="";
+			document.getElementById("celular2").value="";
+			document.getElementById("fn").value="";
+			document.getElementById("est").value="";
+			document.getElementById("obs").value="";
+			document.getElementById("direccion").value="";
+			document.getElementById("telefono").value="";
+			document.getElementById("correo").value="";
+			document.getElementById("celular3").value="";
+			document.getElementById("tipoc").value="";			    
+		}*/</script> 
+		<script type="text/javascript">
+/*Script para datos laborales*/
+		contador1=0;
+        final=0;
+		var reg= new Array(17);
+		function adicion1(){
+		    final1=contador1; 
+			tipoc=document.getElementById("tipoc").value;
+			fcontrato=document.getElementById("fcontrato").value;
+			ffcontrato=document.getElementById("ffcontrato").value;
+			departamento=document.getElementById("departamento").value;
+			cargo=document.getElementById("cargo").value;
+			jinmediato=document.getElementById("jinmediato").value;
+			estadoe=document.getElementById("estadoe").value;
+			sueldo=document.getElementById("sueldo").value;
+			funciones=document.getElementById("funciones").value;
+			emaili=document.getElementById("emaili").value;
+			eps=document.getElementById("eps").value;
+			cconp=document.getElementById("cconp").value;
+			arp=document.getElementById("arp").value;
+			fonp=documen.getElementById("fonp").value:
+			historial=document.getElementById("historial").value;
+			obs=document.getElementById("obs").value;
+			reg[contador1] = new ArrayL(53);
+		    reg[contador1][0]=tipoc;
+		    reg[contador1][1]=fcontrato;
+		    reg[contador1][2]=ffcontrato;
+		    reg[contador1][5]=departamento;
+		    reg[contador1][6]=cargo;
+		    reg[contador1][3]=sueldo;
+		    reg[contador1][4]=funciones;
+		    reg[contador1][7]=jinmediato;
+		    reg[contador1][8]=estadoe;
+		    reg[contador1][9]=emaili;
+		    reg[contador1][10]=eps;
+		    reg[contador1][11]=arp;
+		    reg[contador1][12]=historial;
+		    reg[contador1][13]=cconp;
+		    reg[contador1][14]=obs;
+		    reg[contador1][15]=fonp;
+		    alert("Registro Guardado..");
+		    contador1 = contador1 + 1;
+		    document.getElementById("tipoc").value="";
+			document.getElementById("fcontrato").value="";
+			document.getElementById("ffcontrato").value="";
+			document.getElementById("departamento").value="";
+			document.getElementById("cargo").value="";
+			document.getElementById("jinmediato").value="";
+			document.getElementById("estadoe").value="";
+			document.getElementById("sueldo").value="";
+			document.getElementById("funciones").value="";
+			document.getElementById("emaili").value="";
+			document.getElementById("eps").value="";
+			document.getElementById("fonp").value="";
+			document.getElementById("cconp").value="";
+			document.getElementById("historial").value="";	
+			document.getElementById("obs").value="";
+		}
+		function siguiente1(){
+		   if(contador1 < final ){
+			 contador1=contador1 + 1;
+			} 
+		   document.getElementById("tipoc").value=reg[contador1][0];
+		   document.getElementById("fcontrato").value=reg[contador1][1];
+		   document.getElementById("ffcontrato").value=reg[contador1][2];
+		   document.getElementById("departamento").value=reg[contador1][5];
+		   document.getElementById("cargo").value=reg[contador1][6];
+		   document.getElementById("jinmediato").value=reg[contador1][7];
+		   document.getElementById("estadoe").value=reg[contador1][8];
+		   document.getElementById("sueldo").value=reg[contador1][3];
+		   document.getElementById("funciones").value=reg[contador1][4];
+		   document.getElementById("emaili").value=reg[contador1][9];
+		   document.getElementById("eps").value=reg[contador1][10];
+		   document.getElementById("historial").value=reg[contador1][12];
+		   document.getElementById("cconp").value=reg[contador1][13];
+		   document.getElementById("obs").value=reg[contador1][14];
+		  document.getElementById("fonp").value=reg[contador1][12];
+		alert("siguiente" + contador1);
+		}
+		function anterior1(){
+		   if(contador1 > 0){
+		     contador1=contador1 - 1;
+		   }
+		   document.getElementById("tipoc").value=reg[contador1][0];
+		   document.getElementById("fcontrato").value=reg[contador1][1];
+		   document.getElementById("ffcontrato").value=reg[contador1][2];
+		   document.getElementById("departamento").value=reg[contador1][5];
+		   document.getElementById("cargo").value=reg[contador1][6];
+		   document.getElementById("jinmediato").value=reg[contador1][7];
+		   document.getElementById("estadoe").value=reg[contador1][8];		   
+		   document.getElementById("sueldo").value=reg[contador1][3];
+		   document.getElementById("funciones").value=reg[contador1][4];
+		   document.getElementById("emaili").value=reg[contador1][9];
+		   document.getElementById("eps").value=reg[contador1][10];
+		   document.getElementById("historial").value=reg[contador1][12];	
+		    document.getElementById("cconp").value=reg[contador1][13];
+		    document.getElementById("obs").value=reg[contador1][14];
+		     document.getElementById("fonp").value=reg[contador1][15];	   
+		alert("anterior" + contador1);
+		}
+  
+
+        function ultimo1(){
+           contador1=final;
+           document.getElementById("tipoc").value=reg[contador1][0];
+		   document.getElementById("fcontrato").value=reg[contador1][1];
+		   document.getElementById("ffcontrato").value=reg[contador1][2];
+		   document.getElementById("departamento").value=reg[contador1][5];
+		   document.getElementById("cargo").value=reg[contador1][6];
+		   document.getElementById("jinmediato").value=reg[contador1][7];
+		   document.getElementById("estadoe").value=reg[contador1][8];		   
+		   document.getElementById("sueldo").value=reg[contador1][3];
+		   document.getElementById("funciones").value=reg[contador1][4];
+		   document.getElementById("emaili").value=reg[contador1][9];
+		   document.getElementById("eps").value=reg[contador1][10];
+		   document.getElementById("historial").value=reg[contador1][12];	
+		    document.getElementById("cconp").value=reg[contador1][13];
+		    document.getElementById("obs").value=reg[contador1][14];
+		     document.getElementById("fonp").value=reg[contador1][15];
+		   }	
+        function primero1(){
+           contador1=0;
+           document.getElementById("tipoc").value=reg[contador1][0];
+		   document.getElementById("fcontrato").value=reg[contador1][1];
+		   document.getElementById("ffcontrato").value=reg[contador1][2];
+		   document.getElementById("departamento").value=reg[contador1][5];
+		   document.getElementById("cargo").value=reg[contador1][6];
+		   document.getElementById("jinmediato").value=reg[contador1][7];
+		   document.getElementById("estadoe").value=reg[contador1][8];		   
+		   document.getElementById("sueldo").value=reg[contador1][3];
+		   document.getElementById("funciones").value=reg[contador1][4];
+		   document.getElementById("emaili").value=reg[contador1][9];
+		   document.getElementById("eps").value=reg[contador1][10];		
+		   document.getElementById("historial").value=reg[contador1][12];
+		    document.getElementById("cconp").value=reg[contador1][13];
+		    document.getElementById("obs").value=reg[contador1][14];
+		     document.getElementById("fonp").value=reg[contador1][14];
+               }
+			function borrar1(){
+		    final =contador1; 
+			tipoc=document.getElementById("tipoc").value="";
+			fcontrato=document.getElementById("fcontrato").value="";
+			ffcontrato=document.getElementById("ffcontrato").value="";
+			departamento=document.getElementById("departamento").value="";
+			cargo=document.getElementById("cargo").value="";
+			jinmediato=document.getElementById("jinmediato").value="";
+			estadoe=document.getElementById("estadoe").value="";
+			sueldo=document.getElementById("sueldo").value="";
+			funciones=document.getElementById("funciones").value="";
+			emaili=document.getElementById("emaili").value="";
+			eps=document.getElementById("eps").value="";
+			cconp=document.getElementById("cconp").value="";
+			historial=document.getElementById("historial").Value="";
+			obs=document.getElementById("obs").value="";
+			fonp=document.getElementById("fonp").value="";
+			arp=document.getElementById("arp").value;
+			
+			reg[contador1] = new Array(53);
+		    reg[contador1][0]=tipoc;
+		    reg[contador1][1]=fcontrato;
+		    reg[contador1][2]=ffcontrato;
+		    reg[contador1][5]=departamento;
+		    reg[contador1][6]=cargo;
+		    reg[contador1][3]=sueldo;
+		    reg[contador1][4]=funciones;
+		    reg[contador1][7]=jinmediato;
+		    reg[contador1][8]=estadoe;
+		    reg[contador1][9]=emaili;
+		    reg[contador1][10]=eps;
+		    reg[contador1][11]=arp;
+		    reg[contador1][12]=historial;
+		    reg[cotador1][13]=cconp;
+		    re1[contador1][14]=obs;
+		    reg[contador1][15]=fonp;
+		    alert("Registro Borrado..");
+		    contador1=contador1 + 1;
+		    document.getElementById("tipoc").value="";
+			document.getElementById("fcontrato").value="";
+			document.getElementById("ffcontrato").value="";
+			document.getElementById("departamento").value="";
+			document.getElementById("cargo").value="";
+			document.getElementById("jinmediato").value="";
+			document.getElementById("estadoe").value="";
+			document.getElementById("sueldo").value="";
+			document.getElementById("funciones").value="";
+			document.getElementById("emaili").value="";
+			document.getElementById("eps").value="";
+			document.getElementById("cconp").value="";
+			document.getElementById("historial").value="";
+			document.getElementById("obs").value="";
+			document.getElementById("fonp").value="";			    
+		}
+
+     </SCRIPT>
+  </HEAD>
+  <BODY>
+		  <br><br>
+	  <div id="cuerpo">
+	      <div id="encabezado">
+	         <table>
+              <tr>
+	            <td>
+					<br><Strong class="T1">COOPERATIVA COOTAN S.A.</Strong>
+					<br>Cooperativa de Trabajadores Asociados del Rio Nare y sus Alrededores.
+				</td>
+	            <td>
+	               <table>
+	                   <tr>
+						   <td><center>NIT:  800 960 3714 - 8</center></td> 
+	                   </tr>
+						   <td><center>PBX: 2 11 70 28</center></td> 
+	                   <tr>
+	                   </tr>
+	               </table>  
+	            </td>
+	         </tr>
+	         </table>
+	      </div>
+	      <div id="fichas">
+			   <TABLE>
+		          <TR>
+			        <TD>
+		               <a href="#item1" class="menu1">Datos Personales</a>	
+			        </TD>
+			        <TD>
+		               <a href="#item2" class="menu1">Datos Laborales</a>	
+			        </TD>
+			        <TD>
+		               <a href="#item3" class="menu1">N&oacute;minas</a>	
+			        </TD>
+			        <TD>
+		               <a href="#default" class="menu1">Inicio</a>	
+			        </TD>
+		          </TR>     
+       	      </TABLE>
+	      </div>
+	      <div id="mitad">
+			  <div class="items">
+		          <div id="item1">
+<!---Datos personales-->
+					  <br><br>
+					  <table>
+		  				 <tr>			
+							<td colspan="4"><br><p>Esta ficha contiene, los datos personales de cada trabajador, para sus consultas habituales.</p><br></td>
+						</tr>
+						<tr>
+							<td colspan="4" class="t1"><center>Datos Personales Empleado</center></td>
+						</tr>						
+						<tr>
+							<td rowspan="4"><center><img src="" id="foto" /></center></td>
+						</tr>
+						<tr>
+							<td>Identificaci&oacute;n:<input type="text" value="" id="identificacion" /></td>
+							<td>Nombre Completo:<input type="text" value="" id="nombre" /></td>
+							<td>Tel&eacute;fono Celular:<input type="text" value="" id="celular" /></td>
+						</tr>
+
+						<tr>
+							<td colspan="4">Direcci&oacute;n:<input type="text" value="" id="direccion" /></td>
+						</tr>
+						<tr>
+							<td>Tel&eacute;fono Fijo:<input type="text" value="" id="telefono" /></td>
+							<td>M&oacute;vil2:<input type="text" value="" id="celular2" /></td>
+							<td>G&eacute;nero:
+							   <select id="genero">
+							      <option>M&aacute;sculino</option>
+							      <option>Femenino</option>
+							      <option>Otro..</option>
+							   </select>
+							</td>
+							
+						</tr>
+						<tr>
+							<td colspan="4">Correo Electr&oacute;nico:<input type="text" value="" id="correo" /></td>
+						</tr>
+						<tr>
+							<td>Fecha Nacimiento:<input type="text" value="" id="fn" /></td>
+							<td>Estrato:<input type="text" value="" id="est" /></td>
+							<td>Estado Civil:
+							   <select id="ec">
+							      <option>Soltero</option>
+							      <option>Casado</option>
+							      <option>Uni&oacute;n Libre</option>
+							      <option>Viudo</option>
+							   </select>
+							</td>
+							<td>M&oacute;vil3:<input type="text" value="" id="celular3" /></td>
+						</tr>
+						<tr>
+							<td colspan="4">&nbsp;</td>
+						</tr>							
+						<tr>
+							<td colspan="4">Observaciones:<textarea id="obs"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan="4">&nbsp;</td>
+						</tr>						
+						<tr>
+						    <td colspan="4">
+						        <table>
+									<tr>
+										<td><input type="button" id="inicio" value="||<" onClick="primero()"  /></td>
+										<td><input type="button" id="anterior" value="<" onClick="anterior()" /></td>
+										<td><input type="button" id="siguiente" value=">" onClick="siguiente()" /></td>
+										<td><input type="button" id="" value=">||"onClick="ultimo()"  /></td>
+										<td><input type="button" id="" value="Guardar" onclick="adicion()" /></td>
+										<td><input type="button" id="" value="Borrar"  onclick="borrar()" /></td>																				
+									</tr>
+						        </table>
+						    </td>
+						</tr>																							
+					  </table>
+		          </div>
+		          <div id="item2">
+					  <br><br>
+<!--Datos Laborales-->
+					  <table>
+		  				 <tr>			
+							<td colspan="4"><br><p>Esta ficha contiene, los datos Laborales de cada trabajador, para sus consultas habituales.</p><br></td>
+						</tr>
+		  				 <tr>			
+							<td colspan="4" class="t1"><center>Datos Laborales Empleados</center></td>
+						</tr>						
+						<tr>
+							<td>Tipo de Contrato:<input type="text" value="" id="tipoc" /></td>
+							<td>Fecha Contrataci&oacute;n:<input type="text" value="" id="fcontrato" /></td>
+							<td>Fecha Fin Contrato:<input type="text" value="" id="ffcontrato" /></td>
+							<td>Departamento:<input type="text" value="" id="departamento" /></td>
+						</tr>
+						<tr>
+							<td>Cargo:<input type="text" value="" id="cargo" /></td>
+							<td>Jefe Inmediato:<input type="text" value="" id="jinmediato" /></td>
+							<td>
+								Estado de Empleado:
+								<Select id="estadoe">
+									<option>Activo</option>
+									<option>InActivo</option>
+								</Select>
+							</td>
+							<td>Sueldo Pactado:<input type="text" value="" id="sueldo" /></td>							
+						</tr>						
+						<tr>
+							<td colspan="4">Funciones:
+								<textarea id="funciones"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4">Correo Institucional:<input type="text" value="" id="emaili" /></textarea></td>
+						</tr>																							
+
+						<tr>
+							<td>EPS:<input type="text" value="" id="eps" /></td>
+							<td>ARP:<input type="text" value="" id="arp" /></td>
+							<td>Fondo de Pensi&oacute;n:<input type="text" value="" id="fonp" /></td>
+							<td>Caja Compensaci&oacute;n:<input type="text" value="" id="cconp" /></td>
+						</tr>
+						<tr>
+							<td colspan="4">Historial:<textarea id="historial"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan="4">Observaciones:<textarea id="obs"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan="4">&nbsp;</td>
+						</tr>							
+						<tr>
+						    <td colspan="4">
+						        <table>
+									<tr>
+										<td><input type="button" id="inicio" value="||<" onclick="primero()" /></td>
+										<td><input type="button" id="anterior" value="<" onclick="anterior1()"/></td>
+										<td><input type="button" id="siguiente1" value=">" onclick="siguiente()" /></td>
+										<td><input type="button" id="" value=">||" onclick="ultimo1()" /></td>
+										<td><input type="button" id="" value="Guardar" onclick="adicion1()" /></td>
+										<td><input type="button" id="" value="Borrar" onclick="borrar1()" /><td>	
+									</tr>
+						        </table><td>																							
+					  </table>
+				  
+				  </div>
+		          <div id="item3">
+					  <br><br>
+<!--Nomina-->
+					  <table>
+		  				 <tr>			
+							<td colspan="5"><br><p>Esta ficha contiene, los datos N&oacute;mina de cada trabajador, para sus consultas habituales.</p><br></td>
+						</tr>
+						<tr>
+ 					        <td colspan="5" class="t1"><center>Liquidaci&oacute;n del Sueldo Devengado</center></td>
+						</tr> 
+						<tr>
+						    <td>Sueldo Pactado:<input type="text" value="" id="sueldop"  /></td>
+						    <td>Horas Trabajadas:<input type="text" value="" id="htrab" /></td>
+						    <td>Horas Ext Diurnas:<input type="text" value="" id="hed" /></td>
+						    <td>Horas Ext Nocturna:<input type="text" value="" id="hen" /></td>
+						    <td>Horas Ext Festivas:<input type="text" value="" id="hef" /></td>
+						</tr>	
+						<tr>
+						    <td>Valor Hora Normal:<input type="text" value="" id="vhn" /></td>
+						    <td>Total Horas Ext Diurnas:<input type="text" value="" id="thed" /></td>
+						    <td>Total Horas Ext Nocturnas:<input type="text" value="" id="then" /></td>
+						    <td>Total Horas Ext Festivas:<input type="text" value="" id="thef" /></td>
+						    <td>Total Horas Extras:<input type="text" value="" id="vthe" /></td>
+						</tr>	
+						<tr>
+						    <td>Subsidio Transporte:<input type="text" value="" id="st" /></td>
+						    <td>Bonificaci&oacute;n:<input type="text" value="" id="bon" /></td>
+						    <td>Comisi&oacute;n:<input type="text" value="" id="com" /></td>
+						    <td>Otros Devengados:<input type="text" value="" id="odev" /></td>
+						    <td>Total Horas Extras:<input type="text" value="" id="vthe" /></td>
+						</tr>	
+						<tr>
+						    <td colspan="5">Total Devengado:<input type="text" value="" id="tdev" /></td>
+						</tr>	
+						<tr>
+ 					        <td colspan="5" >&nbsp;</td>
+						</tr> 						
+						<tr>
+ 					        <td colspan="5" class="t1"><center>Deducciones al Sueldo de Empleado</center></td>
+						</tr> 
+						<tr>
+						    <td>Salud:<input type="text" value="" id="salud" /></td>
+						    <td>Pensi&oacute;n:<input type="text" value="" id="pension" /></td>
+						    <td>Cooperativa:<input type="text" value="" id="coop" /></td>
+						    <td>Retenci&oacute;n:<input type="text" value="" id="retencion" /></td>
+						    <td>Caja:<input type="text" value="" id="cajacomp" /></td>
+						</tr>	
+						<tr>
+						    <td>Prestamos:<input type="text" value="" id="prestamo" /></td>
+						    <td>Cuota:<input type="text" value="" id="cuota" /></td>
+						    <td>Otras Deducciones:<input type="text" value="" id="oded" /></td>
+						    <td colspan="2">Acciones:<input type="button" value="Calcular.." id="calculo" Onclick="" /></td>
+
+						</tr>	
+												
+						<tr>
+						    <td colspan="5">Total Deducido:<input type="text" value="" id="tdev" /></td>
+						</tr>
+						<tr>
+ 					        <td colspan="5" >&nbsp;</td>
+						</tr> 							
+						<tr>
+						    <td colspan="5">Despu&eacute;s de haber calculado el devengado y el total de los descuentos, hallamos el neto, correspondiente a la diferencia entre el devengado y el deducido.</td>
+						</tr>												      								      							      						      														
+						<tr>
+ 					        <td colspan="5" >&nbsp;</td>
+						</tr> 												
+						<tr>
+						    <td colspan="5" class="t1">Total Neto:<input type="text" value="" id="tdev" /></td>
+						</tr>
+						<tr>
+							<td colspan="5">&nbsp;</td>
+						</tr>							
+						<tr>
+						    <td colspan="5">
+						        <table>
+									<tr>
+										<td><input type="button" id="inicio" value="||<" /></td>
+										<td><input type="button" id="anterior" value="<" /></td>
+										<td><input type="button" id="siguiente" value=">" /></td>
+										<td><input type="button" id="" value=">||" /></td>
+										<td><input type="button" id="" value="Guardar" onclick="adicion()"/></td>
+										<td><input type="button" id="" value="Borrar" /></td>																				
+									</tr>
+						        </table>
+						    </td>												
+					  </table>		          
+		          </div>
+		          <div id="default">
+		              <center>
+						<br><br>
+						<h3>********Aplicaci&oacute;n Java Script de Referencia*******</h3>
+						<br><br>
+						<p>
+						   Este programa, es una modelo para que los estudiantes lo usen con el fin de colocar a prueba su concimiento de Java Scrip.<br><br>
+						   Creado por Waldo jim&eacute;nez Pinto con un prop&oacute;cito educativo.<br><br><br>
+						   <strong>Objetivo:</strong><br><br>
+						   El estudiante, deber&aacute; programar las validaciones de los campos en cada formulario, realizando los c&aacute;lculos correspondientes en la liquidaci&oacute;n del empleado que deber&aacute; 
+						   realizarse con el bot&oacute;n <strong>Calcular</strong>.  Adem&aacute;s, 
+						   debe poner a funcionar cada bot&oacute;n para que el usuario, pueda navegar a trav&eacute;s de los diferentes empleados registrados.<br><br><br>
+						   <strong>Proyecto:</strong><br><br>
+						   Basado en este modelo, los estudiantes, deber&aacute;n crear un aplicativo capaz de manejar la informaci&oacute;n en un proceso de negocios, como:  Inventarios, N&oacute;minas, etc., que puedan 
+						   ser aplicados.<br><br><br>
+						   <strong>A cerca del Modelo.</strong><br><br>
+						   Este modelo fu&eacute; creado en su totalidad en el lenguaje de marcado de hiper texto HTML y el lenguaje de definici&oacute;n de estilos en cascada CSS, por Waldo Jimenez Pinto<br><br><br><br>
+						   <strong>Bogot&aacute; D.C., Octubre de 2018.</strong> 
+						   
+						</p>
+		              </center>
+		          </div>
+	          </div> 
+	      </div>
+	      <div id="pie">
+			  
+	          Direcci&oacute;n: carrera 44a # 63-24,  tel&eacute;fonos 2 11 70 28 - 2 11 78 88, email info@cooperativacootanxx.com, P&aacute;gina Web http://www.cootanxx.com<br>
+	          Reservados todos los derechos de autor, bajo licencia Copyright 2018.
+	      </div>
+	  </div>
+
+  </BODY>
+  
+</HTML>
+
