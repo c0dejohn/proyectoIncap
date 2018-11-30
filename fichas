@@ -1,0 +1,1209 @@
+<HTML>
+  <HEAD>
+     <TITLE>
+     </TITLE>
+     <STYLE>
+		 /*div.items div {display: none}
+         div.items div:target {display: block}*/
+         body{
+			 width:100%;
+			 height:100%;
+			 background-image:url("imagen1.jpg");	
+
+		 }
+		 #cuerpo{
+			 margin:auto;
+			 width:1000px;
+			 height:900px;
+			 background:#ecf7fa;
+		 }
+		 #cuerpo #encabezado{
+			 width:100%;
+			 height:100px;
+			 background:#33d4ff;
+			 font-family:Arial;
+			 font-weight:700;
+			 
+
+		 }
+		 #cuerpo #encabezado table{width:100%;height:50px;}
+		 .T1{
+			 font-size:20px;
+			 font-weight:700;
+			 font-family:Homer Simpson;
+			border-radius:1px;
+
+			
+		 }
+		 
+		 #cuerpo #fichas{
+			 width:100%;
+			 height:30px;
+			 background:#7a99a2;
+			 color:#b86605;
+			 font-family:arial;
+		 }
+		 #cuerpo #mitad{
+			 margin:auto;
+			 width:100%;
+			 height:770px;
+			 background:#545462;
+		 }
+		 #cuerpo #pie{
+			 width:100%;
+			 height:50px;
+			 background:#12aed1;
+			 color:#060606;
+			 text-align:center;
+			 font-size:12px;
+			 padding: 10px 0px 0px 0px;
+			 border-radius:2px;
+
+		 }
+         div.items div:not(:target) {display: none}
+		 div.items div:target {display: block}
+		 #cuerpo #item1, #item2, #item3{background:#7a94a2; width:100%;height:100%;font-size:10px;}
+		 #cuerpo #fichas TABLE TR TD{
+		   width:200px;
+		   height:25px;
+		   font-size:12px;
+		   text-align:center;
+		   font-family:arial;
+		   color:#ccc;
+		   background:#848484;
+		 }
+		 #cuerpo #mitad #item1 table tr td #foto{
+			 margin:auto;
+			 width:80%;
+			 height:150px;
+			 background:#ccc;
+		 }
+		 #cuerpo #mitad #item1 table tr td textarea{
+			 width:100%;
+			 height:200px;
+			 background:#ccc;
+		 }	
+		 #cuerpo #mitad #item2 table tr td textarea{
+			 width:100%;
+			 height:100px;
+			 background:#ccc;
+		 }			 	 
+		 #cuerpo #fichas TABLE TR TD a{
+		   text-decoration: none;
+		   font-size:18px;
+		   text-align:center;
+		   font-family:arial;
+		   color:#000;
+		   }
+		 #cuerpo #fichas TABLE TR TD:HOVER{
+			 BACKGROUND:#ccc;
+			 color:#000;
+		 }
+		 #cuerpo #mitad TABLE{ margin:auto;width:80%;font-size:11px;text-align:center;}
+		 #cuerpo #mitad .t1{
+			 background:#acacac;
+		 }
+		 #cuerpo #mitad TABLE TR TD input, select{
+			 width:100%;
+			 height:25px;
+			 background:#ccc;
+			 text-align:center;
+		 } 
+		/* #cuerpo #mitad #items #item3 TABLE TR TD #ti{ margin:auto;width:80%;font-size:13px;}		 
+         #cuerpo #mitad #items #item3 TABLE TR TD input, select{
+			 width:100%;
+			 height:25px;
+			 background:#ccc;
+			 text-align:center;*/
+		 }	 
+     </STYLE>
+     <SCRIPT language="JavaScript">
+        contador=0;
+        final=0;
+        // script para datos personales
+		var reg=new Array(53);
+
+		function adicion(){
+		    final=contador; 
+			nombre=document.getElementById("nombre").value;
+			identificacion=document.getElementById("identificacion").value;
+			celular=document.getElementById("celular").value;
+			celular2=document.getElementById("celular2").value;
+			fn=document.getElementById("fn").value;
+			est=document.getElementById("est").value;
+			obs=document.getElementById("obs").value;
+			direccion=document.getElementById("direccion").value;
+			telefono=document.getElementById("telefono").value;
+			correo=document.getElementById("correo").value;
+			celular3=document.getElementById("celular3").value;
+			//gen=document.getElementById("genero");
+			//genero=gen.options[gen.SelectedIndex].text;
+			genero=document.getElementById("genero").value;
+			
+			reg[contador] = new Array(53);
+		    reg[contador][0]=nombre;
+		    reg[contador][1]=identificacion;
+		    reg[contador][2]=celular;
+		    reg[contador][5]=celular2;
+		    reg[contador][6]=fn;
+		    reg[contador][3]=direccion;
+		    reg[contador][4]=telefono;
+		    reg[contador][7]=est;
+		    reg[contador][8]=obs;
+		    reg[contador][9]=correo;
+		    reg[contador][10]=celular3;
+		    reg[contador][11]=genero;
+		  
+		    alert("Registro Guardado..");
+		    contador=contador + 1;
+		    document.getElementById("nombre").value="";
+			document.getElementById("identificacion").value="";
+			document.getElementById("celular").value="";
+			document.getElementById("celular2").value="";
+			document.getElementById("fn").value="";
+			document.getElementById("est").value="";
+			document.getElementById("obs").value="";
+			document.getElementById("direccion").value="";
+			document.getElementById("telefono").value="";
+			document.getElementById("correo").value="";
+			document.getElementById("celular3").value="";
+					    
+		}
+		function siguiente(){
+		   if(contador < final ){
+			 contador=contador + 1;
+			} 
+		   document.getElementById("nombre").value=reg[contador][0];
+		   document.getElementById("identificacion").value=reg[contador][1];
+		   document.getElementById("celular").value=reg[contador][2];
+		   document.getElementById("celular2").value=reg[contador][5];
+		   document.getElementById("fn").value=reg[contador][6];
+		   document.getElementById("est").value=reg[contador][7];
+		   document.getElementById("obs").value=reg[contador][8];
+		   document.getElementById("direccion").value=reg[contador][3];
+		   document.getElementById("telefono").value=reg[contador][4];
+		   document.getElementById("correo").value=reg[contador][9];
+		   document.getElementById("celular3").value=reg[contador][10];
+		  
+		   
+		alert("siguiente" + contador);
+		}
+		function anterior(){
+		   if(contador > 0){
+		     contador=contador - 1;
+		   }
+		   document.getElementById("nombre").value=reg[contador][0];
+		   document.getElementById("identificacion").value=reg[contador][1];
+		   document.getElementById("celular").value=reg[contador][2];
+		   document.getElementById("celular2").value=reg[contador][5];
+		   document.getElementById("fn").value=reg[contador][6];
+		   document.getElementById("est").value=reg[contador][7];
+		   document.getElementById("obs").value=reg[contador][8];		   
+		   document.getElementById("direccion").value=reg[contador][3];
+		   document.getElementById("telefono").value=reg[contador][4];
+		   document.getElementById("correo").value=reg[contador][9];
+		   document.getElementById("celular3").value=reg[contador][10];
+				   
+		alert("anterior" + contador);
+		}
+  
+
+        function ultimo(){
+           contador=final;
+           document.getElementById("nombre").value=reg[contador][0];
+		   document.getElementById("identificacion").value=reg[contador][1];
+		   document.getElementById("celular").value=reg[contador][2];
+		   document.getElementById("celular2").value=reg[contador][5];
+		   document.getElementById("fn").value=reg[contador][6];
+		   document.getElementById("est").value=reg[contador][7];
+		   document.getElementById("obs").value=reg[contador][8];		   
+		   document.getElementById("direccion").value=reg[contador][3];
+		   document.getElementById("telefono").value=reg[contador][4];
+		   document.getElementById("correo").value=reg[contador][9];
+		   document.getElementById("celular3").value=reg[contador][10];
+		   	
+		   }	
+        function primero(){
+           contador=0;
+           document.getElementById("nombre").value=reg[contador][0];
+		   document.getElementById("identificacion").value=reg[contador][1];
+		   document.getElementById("celular").value=reg[contador][2];
+		   document.getElementById("celular2").value=reg[contador][5];
+		   document.getElementById("fn").value=reg[contador][6];
+		   document.getElementById("est").value=reg[contador][7];
+		   document.getElementById("obs").value=reg[contador][8];		   
+		   document.getElementById("direccion").value=reg[contador][3];
+		   document.getElementById("telefono").value=reg[contador][4];
+		   document.getElementById("correo").value=reg[contador][9];
+		   document.getElementById("celular3").value=reg[contador][10];		
+		   
+               }
+			function borrar(){
+		    final=contador; 
+			nombre=document.getElementById("nombre").value="";
+			identificacion=document.getElementById("identificacion").value="";
+			celular=document.getElementById("celular").value="";
+			celular2=document.getElementById("celular2").value="";
+			fn=document.getElementById("fn").value="";
+			est=document.getElementById("est").value="";
+			obs=document.getElementById("obs").value="";
+			direccion=document.getElementById("direccion").value="";
+			telefono=document.getElementById("telefono").value="";
+			correo=document.getElementById("correo").value="";
+			celular3=document.getElementById("celular3").value=""
+
+			;
+			//gen=document.getElementById("genero");
+			//genero=gen.options[gen.SelectedIndex].text;
+			genero=document.getElementById("genero").value;
+			
+			reg[contador] = new Array(53);
+		    reg[contador][0]=nombre;
+		    reg[contador][1]=identificacion;
+		    reg[contador][2]=celular;
+		    reg[contador][5]=celular2;
+		    reg[contador][6]=fn;
+		    reg[contador][3]=direccion;
+		    reg[contador][4]=telefono;
+		    reg[contador][7]=est;
+		    reg[contador][8]=obs;
+		    reg[contador][9]=correo;
+		    reg[contador][10]=celular3;
+		    reg[contador][11]=genero;
+		   
+		    alert("Registro Borrado..");
+		    contador=contador + 1;
+		    document.getElementById("nombre").value="";
+			document.getElementById("identificacion").value="";
+			document.getElementById("celular").value="";
+			document.getElementById("celular2").value="";
+			document.getElementById("fn").value="";
+			document.getElementById("est").value="";
+			document.getElementById("obs").value="";
+			document.getElementById("direccion").value="";
+			document.getElementById("telefono").value="";
+			document.getElementById("correo").value="";
+			document.getElementById("celular3").value="";
+						    
+		}
+		
+	//Datos nomina------------------------------------------------	
+		function datosNomina(){
+			final=contador;
+
+
+			var tipoc=document.getElementById("tipoc").value;
+			var fcontrato=document.getElementById("fcontrato").value;     	
+			var ffcontrato=document.getElementById("ffcontrato").value;
+			var departamento=document.getElementById("departamento").value;
+			var cargo=document.getElementById("cargo").value;
+			var estadoe=document.getElementById("estadoe").value;
+			var sueldo=document.getElementById("sueldo").value;
+			var funciones=document.getElementById("funciones").value;
+			var emaili=document.getElementById("emaili").value;
+			var historial=document.getElementById("historial").value;
+			var obs1=document.getElementById("obs1").value;
+			var jinmediato=document.getElementById("jinmediato").value;
+			var eps=document.getElementById("eps").value;	
+			var arp=document.getElementById("arp").value;
+			var fonp=document.getElementById("fonp").value;
+			var cconp=document.getElementById("cconp").value;
+
+
+			reg[contador] = new Array(53);
+			reg[contador][13]=tipoc;
+			reg[contador][14]=fcontrato;
+			reg[contador][15]=ffcontrato;
+			reg[contador][16]=departamento;
+			reg[contador][17]=cargo;
+			reg[contador][18]=estadoe;
+			reg[contador][19]=sueldo;
+			reg[contador][44]=funciones;
+			reg[contador][45]=emaili;
+			reg[contador][46]=historial;
+			reg[contador][12]=obs1;
+			reg[contador][47]=jinmediato;
+			reg[contador][48]=eps;
+			reg[contador][49]=arp;
+			reg[contador][50]=fonp;
+			reg[contador][51]=cconp;
+			alert("Registro almacenado...");
+			contador=contador+1;
+
+			document.getElementById("tipoc").value="";
+			document.getElementById("fcontrato").value="";
+			document.getElementById("ffcontrato").value="";
+			document.getElementById("departamento").value="";
+			document.getElementById("cargo").value="";
+			document.getElementById("estadoe").value="";
+			document.getElementById("sueldo").value="";
+			document.getElementById("funciones").value="";
+			document.getElementById("emaili").value="";
+			document.getElementById("historial").value="";
+			document.getElementById("obs1").value="";
+			document.getElementById("jinmediato").value="";
+			document.getElementById("eps").value="";
+			document.getElementById("arp").value="";
+			document.getElementById("fonp").value="";
+			document.getElementById("cconp").value="";
+		}
+		function siguienteDL(){
+		   if(contador < final ){
+			 contador=contador + 1;
+			} 
+		   document.getElementById("tipoc").value=reg[contador][13];
+		   document.getElementById("fcontrato").value=reg[contador][14];
+		   document.getElementById("ffcontrato").value=reg[contador][15];
+		   document.getElementById("departamento").value=reg[contador][16];
+		   document.getElementById("cargo").value=reg[contador][17];
+		   document.getElementById("estadoe").value=reg[contador][18];
+		   document.getElementById("sueldo").value=reg[contador][19];
+			document.getElementById("funciones").value=reg[contador][44];
+		   document.getElementById("emaili").value=reg[contador][45] ;
+			document.getElementById("historial").value=reg[contador][46];
+		document.getElementById("obs1").value=reg[contador][12];
+		document.getElementById("jinmediato").value=reg[contador][47];
+		   document.getElementById("eps").value=reg[contador][48];
+			document.getElementById("arp").value=reg[contador][49];
+			document.getElementById("fonp").value=reg[contador][50];
+			document.getElementById("cconp").value=reg[contador][51];
+		alert("siguiente" + contador);
+		}
+		function anteriorDL(){
+		    if(contador > 0){
+		     contador=contador - 1;
+		   }
+		   document.getElementById("tipoc").value=reg[contador][13];
+		   document.getElementById("fcontrato").value=reg[contador][14];
+		   document.getElementById("ffcontrato").value=reg[contador][15];
+		   document.getElementById("departamento").value=reg[contador][16];
+		   document.getElementById("cargo").value=reg[contador][17];
+		   document.getElementById("estadoe").value=reg[contador][18];
+		   document.getElementById("sueldo").value=reg[contador][19];
+		   document.getElementById("funciones").value=reg[contador][44];
+		   document.getElementById("emaili").value=reg[contador][45] ;
+			document.getElementById("historial").value=reg[contador][46];
+		document.getElementById("obs1").value=reg[contador][12];
+		  document.getElementById("jinmediato").value=reg[contador][47]; 
+		  document.getElementById("eps").value=reg[contador][48];
+			document.getElementById("arp").value=reg[contador][49];
+			document.getElementById("fonp").value=reg[contador][50];
+			document.getElementById("cconp").value=reg[contador][51];
+		alert("anterior" + contador);
+		}
+		function ultimoDL(){
+			contador=final;
+			document.getElementById("tipoc").value=reg[contador][13];
+		   document.getElementById("fcontrato").value=reg[contador][14];
+		   document.getElementById("ffcontrato").value=reg[contador][15];
+		   document.getElementById("departamento").value=reg[contador][16];
+		   document.getElementById("cargo").value=reg[contador][17];
+		   document.getElementById("estadoe").value=reg[contador][18];
+		   document.getElementById("sueldo").value=reg[contador][19];
+		   document.getElementById("funciones").value=reg[contador][44];
+		   document.getElementById("emaili").value=reg[contador][45] ;
+			document.getElementById("historial").value=reg[contador][46];
+		document.getElementById("obs1").value=reg[contador][12];
+		document.getElementById("jinmediato").value=reg[contador][47];
+		document.getElementById("eps").value=reg[contador][48];
+			document.getElementById("arp").value=reg[contador][49];
+			document.getElementById("fonp").value=reg[contador][50];
+			document.getElementById("cconp").value=reg[contador][51];
+		}
+		function primeroDL(){
+			contador=0
+			document.getElementById("tipoc").value=reg[contador][13];
+		   document.getElementById("fcontrato").value=reg[contador][14];
+		   document.getElementById("ffcontrato").value=reg[contador][15];
+		   document.getElementById("departamento").value=reg[contador][16];
+		   document.getElementById("cargo").value=reg[contador][17];
+		   document.getElementById("estadoe").value=reg[contador][18];
+		   document.getElementById("sueldo").value=reg[contador][19];
+		   document.getElementById("funciones").value=reg[contador][44];
+		   document.getElementById("emaili").value=reg[contador][45] ;
+			document.getElementById("historial").value=reg[contador][46];
+		document.getElementById("obs1").value=reg[contador][12];
+		document.getElementById("jinmediato").value=reg[contador][47];
+		document.getElementById("eps").value=reg[contador][48];
+			document.getElementById("arp").value=reg[contador][49];
+			document.getElementById("fonp").value=reg[contador][50];
+			document.getElementById("cconp").value=reg[contador][51];
+		}
+		function borrarDN(){
+			final=contador;
+
+			var tipoc=document.getElementById("tipoc").value="";
+			var fcontrato=document.getElementById("fcontrato").value="";     	
+			var ffcontrato=document.getElementById("ffcontrato").value="";
+			var departamento=document.getElementById("departamento").value="";
+			var cargo=document.getElementById("cargo").value="";
+			var estadoe=document.getElementById("estadoe").value="";
+			var sueldo=document.getElementById("sueldo").value="";
+			var funciones=document.getElementById("funciones").value="";
+			var emaili=document.getElementById("emaili").value="";
+			var historial=document.getElementById("historial").value="";
+			var obs=document.getElementById("obs1").value="";
+			var jinmediato=document.getElementById("jinmediato").value="";
+			var eps=document.getElementById("eps").value="";
+			var arp=document.getElementById("arp").value="";
+			var fonp=document.getElementById("fonp").value="";
+			var cconp=document.getElementById("cconp").value="";
+			reg[contador] = new Array(53);
+			reg[contador][13]=tipoc;
+			reg[contador][14]=fcontrato;
+			reg[contador][15]=ffcontrato;
+			reg[contador][16]=departamento;
+			reg[contador][17]=cargo;
+			reg[contador][18]=estadoe;
+			reg[contador][19]=sueldo;
+			reg[contador][44]=funciones;
+			reg[contador][45]=emaili;
+			reg[contador][46]=historial;
+			reg[contador][12]=obs1;
+			reg[contador][47]=jinmediato;
+			reg[contador][48]=eps;
+			reg[contador][49]=arp;
+			reg[contador][50]=fonp;
+			alert("Registro Borrado...");
+			contador=contador+1;
+
+			document.getElementById("tipoc").value="";
+			document.getElementById("fcontrato").value="";
+			document.getElementById("ffcontrato").value="";
+			document.getElementById("departamento").value="";
+			document.getElementById("cargo").value="";
+			document.getElementById("estadoe").value="";
+			document.getElementById("sueldo").value="";
+			document.getElementById("funciones").value="";
+			document.getElementById("emaili").value="";
+			document.getElementById("historial").value="";
+			document.getElementById("obs").value="";
+			document.getElementById("jinmediato").value="";
+			document.getElementById("eps").value="";
+			document.getElementById("arp").value="";
+			document.getElementById("fonp").value="";
+			document.getElementById("cconp").value="";
+
+		}
+
+
+
+
+
+
+//Nomina----------------------------------------------------
+
+function cNomina(){
+			
+	final=contador;
+
+	var sueldop=document.getElementById("sueldop").value;
+	var htrab=document.getElementById("htrab").value;
+	var hed=document.getElementById("hed").value;
+	var hen=document.getElementById("hen").value;
+	var hef=document.getElementById("hef").value;
+
+	var vhn=document.getElementById("vhn").value=Math.round(sueldop/240);
+	var thed=document.getElementById("thed").value=Math.round(hed*(vhn*1.25));
+	var then=document.getElementById("then").value=Math.round(hen*(vhn*1.50));
+	var thef=document.getElementById("thef").value=Math.round(hef*(vhn*1.75));
+	var vthe=document.getElementById("vthe").value=thed+then+thef;
+
+function subTransp(){
+				if(vhn*htrab<1600000){
+						var subt=(78400/240)*htrab;
+					}else{
+						var subt=0;
+						}
+					return subt;
+				}
+
+	var st=document.getElementById("st").value=Math.round(subTransp());
+	
+
+	
+	var bon=document.getElementById("bon").value=Math.round(sueldop*0.03);
+	var com=document.getElementById("com").value=Math.round(sueldop*0.018);
+	var odev=document.getElementById("odev").value=0;
+	var tdev=document.getElementById("tdev").value=Math.round(((vhn*htrab)+vthe + bon+ com+ odev));
+
+	function cooperativa(){
+				var coope = tdev*0.5;
+				if (coope>80000){
+				var coop2 =80000;
+						}else{
+					var coop2=coope;
+					}
+				return coop2;
+
+				}
+		var coop=document.getElementById("coop").value=Math.round(cooperativa());
+		var salud= document.getElementById("salud").value=Math.round(tdev*0.04);
+
+		var pension=document.getElementById("pension").value=Math.round(tdev*0.06);
+	function retencion(){
+				if(tdev>=1600000){
+					var rete=tdev*0.6;
+				}else{
+				var rete=0;
+				}
+			return rete;
+		}
+		var ret=document.getElementById("ret").value=retencion();
+		var cajacomp=document.getElementById("cajacomp").value=tdev*0.04;
+
+		var prestamo=document.getElementById("prestamo").value;
+		var cuota=document.getElementById("cuota").value;
+		var oded=document.getElementById("oded").value=prestamo/cuota;
+
+		var  tded=document.getElementById("tded").value=Math.round(ret+cajacomp+oded);
+		var tneto=document.getElementById("tneto").value=Math.round(tdev-tded);
+		
+}function guardarCNomina(){
+final=contador;
+
+	
+			
+	
+
+	var sueldop=document.getElementById("sueldop").value;
+	var htrab=document.getElementById("htrab").value;
+	var hed=document.getElementById("hed").value;
+	var hen=document.getElementById("hen").value;
+	var hef=document.getElementById("hef").value;
+
+	var vhn=document.getElementById("vhn").value=Math.round(sueldop/240);
+	var thed=document.getElementById("thed").value=Math.round(hed*(vhn*1.25));
+	var then=document.getElementById("then").value=Math.round(hen*(vhn*1.50));
+	var thef=document.getElementById("thef").value=Math.round(hef*(vhn*1.75));
+	var vthe=document.getElementById("vthe").value=thed+then+thef;
+
+function subTransp(){
+				if(vhn*htrab<1600000){
+						var subt=(78400/240)*htrab;
+					}else{
+						var subt=0;
+						}
+					return subt;
+				}
+
+	var st=document.getElementById("st").value=Math.round(subTransp());
+	
+
+	
+	var bon=document.getElementById("bon").value=Math.round(sueldop*0.03);
+	var com=document.getElementById("com").value=Math.round(sueldop*0.018);
+	var odev=document.getElementById("odev").value=0;
+	var tdev=document.getElementById("tdev").value=Math.round(((vhn*htrab)+vthe + bon+ com+ odev));
+
+	function cooperativa(){
+				var coope = tdev*0.5;
+				if (coope>80000){
+				var coop2 =80000;
+						}else{
+					var coop2=coope;
+					}
+				return coop2;
+
+				}
+		var coop=document.getElementById("coop").value=Math.round(cooperativa());
+		var salud= document.getElementById("salud").value=Math.round(tdev*0.04);
+
+		var pension=document.getElementById("pension").value=Math.round(tdev*0.06);
+	function retencion(){
+				if(tdev>=1600000){
+					var rete=tdev*0.6;
+				}else{
+				var rete=0;
+				}
+			return rete;
+		}
+		var ret=document.getElementById("ret").value=retencion();
+		var cajacomp=document.getElementById("cajacomp").value=tdev*0.04;
+
+		var prestamo=document.getElementById("prestamo").value;
+		var cuota=document.getElementById("cuota").value;
+		var oded=document.getElementById("oded").value=prestamo/cuota;
+
+		var  tded=document.getElementById("tded").value=Math.round(ret+cajacomp+oded);
+		var tneto=document.getElementById("tneto").value=Math.round(tdev-tded);
+reg[contador] = new Array(53);
+		reg[contador][20]=sueldop;
+		reg[contador][21]=htrab;
+		reg[contador][22]=hed;
+		reg[contador][23]=hen;
+		reg[contador][24]=hef;
+		reg[contador][25]=vhn;
+		reg[contador][26]=thed;
+		reg[contador][27]=then;
+		reg[contador][28]=thef;
+		reg[contador][29]=vthe;
+		reg[contador][30]=st;
+		reg[contador][31]=bon;
+		reg[contador][32]=com;
+		reg[contador][33]=odev;
+		reg[contador][34]=tdev;
+		reg[contador][35]=coop;
+		reg[contador][36]=pension;
+		reg[contador][37]=ret;
+		reg[contador][38]=cajacomp;
+		reg[contador][39]=prestamo;
+		reg[contador][40]=cuota;
+		reg[contador][41]=oded;
+		reg[contador][42]=tded;
+		reg[contador][43]=tneto
+		
+
+
+		alert("Registro almacenado...");
+			contador=contador+1;
+
+			document.getElementById("sueldop").value="";
+			document.getElementById("htrab").value="";
+			document.getElementById("hed").value="";
+			document.getElementById("hen").value="";
+			document.getElementById("hef").value="";
+			document.getElementById("vhn").value="";
+			document.getElementById("thed").value="";
+			document.getElementById("then").value="";
+			document.getElementById("thef").value="";
+			document.getElementById("vthe").value="";
+			document.getElementById("st").value="";
+			document.getElementById("bon").value="";
+			document.getElementById("com").value="";
+			document.getElementById("odev").value="";
+			document.getElementById("tdev").value="";
+			document.getElementById("coop").value="";
+			document.getElementById("pension").value="";
+			document.getElementById("ret").value="";
+			document.getElementById("cajacomp").value="";
+			document.getElementById("prestamo").value="";
+			document.getElementById("cuota").value="";
+			document.getElementById("oded").value="";
+			document.getElementById("tded").value="";
+			document.getElementById("tneto").value="";
+
+
+
+}function siguienteCNom(){
+		   if(contador < final ){
+			 contador=contador + 1;
+			} 
+document.getElementById("sueldop").value=reg[contador][20];
+document.getElementById("htrab").value=reg[contador][21];
+document.getElementById("hed").value=reg[contador][22];
+document.getElementById("hen").value=reg[contador][23];
+document.getElementById("hef").value=reg[contador][24];
+document.getElementById("vhn").value=reg[contador][25];
+document.getElementById("thed").value=reg[contador][26];
+document.getElementById("then").value=reg[contador][27];
+document.getElementById("thef").value=reg[contador][28];
+document.getElementById("vthe").value=reg[contador][29];
+document.getElementById("st").value=reg[contador][30];
+document.getElementById("bon").value=reg[contador][31];
+document.getElementById("com").value=reg[contador][32];
+document.getElementById("odev").value=reg[contador][33];
+document.getElementById("tdev").value=reg[contador][34];
+document.getElementById("coop").value=reg[contador][35];
+document.getElementById("pension").value=reg[contador][36];
+document.getElementById("ret").value=reg[contador][37];
+document.getElementById("cajacomp").value=reg[contador][38];
+document.getElementById("prestamo").value=reg[contador][39];
+document.getElementById("cuota").value=reg[contador][40];
+document.getElementById("oded").value=reg[contador][41];
+document.getElementById("tded").value=reg[contador][42];
+document.getElementById("tneto").value=reg[contador][43];
+
+		   
+		alert("siguiente" + contador);
+		}
+	function anteriorCN(){
+		   if(contador > 0){
+		     contador=contador - 1;
+		   }
+document.getElementById("sueldop").value=reg[contador][20];
+document.getElementById("htrab").value=reg[contador][21];
+document.getElementById("hed").value=reg[contador][22];
+document.getElementById("hen").value=reg[contador][23];
+document.getElementById("hef").value=reg[contador][24];
+document.getElementById("vhn").value=reg[contador][25];
+document.getElementById("thed").value=reg[contador][26];
+document.getElementById("then").value=reg[contador][27];
+document.getElementById("thef").value=reg[contador][28];
+document.getElementById("vthe").value=reg[contador][29];
+document.getElementById("st").value=reg[contador][30];
+document.getElementById("bon").value=reg[contador][31];
+document.getElementById("com").value=reg[contador][32];
+document.getElementById("odev").value=reg[contador][33];
+document.getElementById("tdev").value=reg[contador][34];
+document.getElementById("coop").value=reg[contador][35];
+document.getElementById("pension").value=reg[contador][36];
+document.getElementById("ret").value=reg[contador][37];
+document.getElementById("cajacomp").value=reg[contador][38];
+document.getElementById("prestamo").value=reg[contador][39];
+document.getElementById("cuota").value=reg[contador][40];
+document.getElementById("oded").value=reg[contador][41];
+document.getElementById("tded").value=reg[contador][42];
+document.getElementById("tneto").value=reg[contador][43];
+		alert("anterior" + contador);
+		}
+function primeroCN(){
+		   contador=0;
+document.getElementById("sueldop").value=reg[contador][20];
+document.getElementById("htrab").value=reg[contador][21];
+document.getElementById("hed").value=reg[contador][22];
+document.getElementById("hen").value=reg[contador][23];
+document.getElementById("hef").value=reg[contador][24];
+document.getElementById("vhn").value=reg[contador][25];
+document.getElementById("thed").value=reg[contador][26];
+document.getElementById("then").value=reg[contador][27];
+document.getElementById("thef").value=reg[contador][28];
+document.getElementById("vthe").value=reg[contador][29];
+document.getElementById("st").value=reg[contador][30];
+document.getElementById("bon").value=reg[contador][31];
+document.getElementById("com").value=reg[contador][32];
+document.getElementById("odev").value=reg[contador][33];
+document.getElementById("tdev").value=reg[contador][34];
+document.getElementById("coop").value=reg[contador][35];
+document.getElementById("pension").value=reg[contador][36];
+document.getElementById("ret").value=reg[contador][37];
+document.getElementById("cajacomp").value=reg[contador][38];
+document.getElementById("prestamo").value=reg[contador][39];
+document.getElementById("cuota").value=reg[contador][40];
+document.getElementById("oded").value=reg[contador][41];
+document.getElementById("tded").value=reg[contador][42];
+document.getElementById("tneto").value=reg[contador][43];
+		
+		}
+		function ultimoCN(){
+		   final=contador;
+document.getElementById("sueldop").value=reg[contador][20];
+document.getElementById("htrab").value=reg[contador][21];
+document.getElementById("hed").value=reg[contador][22];
+document.getElementById("hen").value=reg[contador][23];
+document.getElementById("hef").value=reg[contador][24];
+document.getElementById("vhn").value=reg[contador][25];
+document.getElementById("thed").value=reg[contador][26];
+document.getElementById("then").value=reg[contador][27];
+document.getElementById("thef").value=reg[contador][28];
+document.getElementById("vthe").value=reg[contador][29];
+document.getElementById("st").value=reg[contador][30];
+document.getElementById("bon").value=reg[contador][31];
+document.getElementById("com").value=reg[contador][32];
+document.getElementById("odev").value=reg[contador][33];
+document.getElementById("tdev").value=reg[contador][34];
+document.getElementById("coop").value=reg[contador][35];
+document.getElementById("pension").value=reg[contador][36];
+document.getElementById("ret").value=reg[contador][37];
+document.getElementById("cajacomp").value=reg[contador][38];
+document.getElementById("prestamo").value=reg[contador][39];
+document.getElementById("cuota").value=reg[contador][40];
+document.getElementById("oded").value=reg[contador][41];
+document.getElementById("tded").value=reg[contador][42];
+document.getElementById("tneto").value=reg[contador][43];
+		}
+		function borrarCN(){
+final=contador;
+
+	
+			
+	
+
+	var sueldop=document.getElementById("sueldop").value="";
+	var htrab=document.getElementById("htrab").value="";
+	var hed=document.getElementById("hed").value="";
+	var hen=document.getElementById("hen").value="";
+	var hef=document.getElementById("hef").value="";
+
+	var vhn=document.getElementById("vhn").value="";
+	var thed=document.getElementById("thed").value="";
+	var then=document.getElementById("then").value="";
+	var thef=document.getElementById("thef").value="";
+	var vthe=document.getElementById("vthe").value="";
+	var st=document.getElementById("st").value="";
+	var bon=document.getElementById("bon").value="";
+	var com=document.getElementById("com").value="";
+	var odev=document.getElementById("odev").value="";
+	var tdev=document.getElementById("tdev").value="";
+	var coop=document.getElementById("coop").value="";
+		var salud= document.getElementById("salud").value="";
+
+		var pension=document.getElementById("pension").value="";
+	
+		var ret=document.getElementById("ret").value="";
+		var cajacomp=document.getElementById("cajacomp").value="";
+
+		var prestamo=document.getElementById("prestamo").value="";
+		var cuota=document.getElementById("cuota").value="";
+		var oded=document.getElementById("oded").value="";
+
+		var  tded=document.getElementById("tded").value="";
+		var tneto=document.getElementById("tneto").value="";
+reg[contador] = new Array(53);
+		reg[contador][20]=sueldop;
+		reg[contador][21]=htrab;
+		reg[contador][22]=hed;
+		reg[contador][23]=hen;
+		reg[contador][24]=hef;
+		reg[contador][25]=vhn;
+		reg[contador][26]=thed;
+		reg[contador][27]=then;
+		reg[contador][28]=thef;
+		reg[contador][29]=vthe;
+		reg[contador][30]=st;
+		reg[contador][31]=bon;
+		reg[contador][32]=com;
+		reg[contador][33]=odev;
+		reg[contador][34]=tdev;
+		reg[contador][35]=coop;
+		reg[contador][36]=pension;
+		reg[contador][37]=ret;
+		reg[contador][38]=cajacomp;
+		reg[contador][39]=prestamo;
+		reg[contador][40]=cuota;
+		reg[contador][41]=oded;
+		reg[contador][42]=tded;
+		reg[contador][43]=tneto;
+		
+
+
+		alert("Registro Borrado...");
+			contador=contador+1;
+
+			document.getElementById("sueldop").value="";
+			document.getElementById("htrab").value="";
+			document.getElementById("hed").value="";
+			document.getElementById("hen").value="";
+			document.getElementById("hef").value="";
+			document.getElementById("vhn").value="";
+			document.getElementById("thed").value="";
+			document.getElementById("then").value="";
+			document.getElementById("thef").value="";
+			document.getElementById("vthe").value="";
+			document.getElementById("st").value="";
+			document.getElementById("bon").value="";
+			document.getElementById("com").value="";
+			document.getElementById("odev").value="";
+			document.getElementById("tdev").value="";
+			document.getElementById("coop").value="";
+			document.getElementById("pension").value="";
+			document.getElementById("ret").value="";
+			document.getElementById("cajacomp").value="";
+			document.getElementById("prestamo").value="";
+			document.getElementById("cuota").value="";
+			document.getElementById("oded").value="";
+			document.getElementById("tded").value="";
+			document.getElementById("tneto").value="";
+
+
+
+}
+
+
+		</script>	
+  </HEAD>
+  <BODY>
+		  <br><br>
+	  <div id="cuerpo">
+	      <div id="encabezado">
+	         <table>
+              <tr>
+	            <td>
+					<br><Strong class="T1">COOPERATIVA COOTAN S.A.</Strong>
+					<br>Cooperativa de Trabajadores Asociados del Rio Nare y sus Alrededores.
+				</td>
+	            <td>
+	               <table>
+	                   <tr>
+						   <td><center>NIT:  800 960 3714 - 8</center></td> 
+	                   </tr>
+						   <td><center>PBX: 2 11 70 28</center></td> 
+	                   <tr>
+	                   </tr>
+	               </table>  
+	            </td>
+	         </tr>
+	         </table>
+	      </div>
+	      <div id="fichas">
+			   <TABLE>
+		          <TR>
+			        <TD>
+		               <a href="#item1" class="menu1">Datos Personales</a>	
+			        </TD>
+			        <TD>
+		               <a href="#item2" class="menu1">Datos Laborales</a>	
+			        </TD>
+			        <TD>
+		               <a href="#item3" class="menu1">N&oacute;minas</a>	
+			        </TD>
+			        <TD>
+		               <a href="#default" class="menu1">Inicio</a>	
+			        </TD>
+		          </TR>     
+       	      </TABLE>
+	      </div>
+	      <div id="mitad">
+			  <div class="items">
+		          <div id="item1">
+				<!---Datos personales++++++++++++++++++++++++++++++++++++++++++++-->
+					  <br><br>
+					  <table>
+		  				 <tr>			
+							<td colspan="4"><br><p>Esta ficha contiene, los datos personales de cada trabajador, para sus consultas habituales.</p><br></td>
+						</tr>
+						<tr>
+							<td colspan="4" class="t1"><center>Datos Personales Empleado</center></td>
+						</tr>						
+						<tr>
+							<td rowspan="4"><center><img src="" id="foto" /></center></td>
+						</tr>
+						<tr>
+							<td>Identificaci&oacute;n:<input type="text" value="" id="identificacion" /></td>
+							<td>Nombre Completo:<input type="text" value="" id="nombre" /></td>
+							<td>Tel&eacute;fono Celular:<input type="text" value="" id="celular" /></td>
+						</tr>
+
+						<tr>
+							<td colspan="4">Direcci&oacute;n:<input type="text" value="" id="direccion" /></td>
+						</tr>
+						<tr>
+							<td>Tel&eacute;fono Fijo:<input type="text" value="" id="telefono" /></td>
+							<td>M&oacute;vil2:<input type="text" value="" id="celular2" /></td>
+							<td>G&eacute;nero:
+							   <select id="genero">
+							      <option>M&aacute;sculino</option>
+							      <option>Femenino</option>
+							      <option>Otro..</option>
+							   </select>
+							</td>
+							
+						</tr>
+						<tr>
+							<td colspan="4">Correo Electr&oacute;nico:<input type="text" value="" id="correo" /></td>
+						</tr>
+						<tr>
+							<td>Fecha Nacimiento:<input type="text" value="" id="fn" /></td>
+							<td>Estrato:<input type="text" value="" id="est" /></td>
+							<td>Estado Civil:
+							   <select id="ec">
+							      <option>Soltero</option>
+							      <option>Casado</option>
+							      <option>Uni&oacute;n Libre</option>
+							      <option>Viudo</option>
+							   </select>
+							</td>
+							<td>M&oacute;vil3:<input type="text" value="" id="celular3" /></td>
+						</tr>
+						<tr>
+							<td colspan="4">&nbsp;</td>
+						</tr>							
+						<tr>
+							<td colspan="4">Observaciones:<textarea id="obs"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan="4">&nbsp;</td>
+						</tr>						
+						<tr>
+						    <td colspan="4">
+						        <table>
+									<tr>
+										<td><input type="button" id="inicio" value="||<" onclick="primero()"  /></td>
+										<td><input type="button" id="anterior" value="<" onclick="anterior()" /></td>
+										<td><input type="button" id="siguiente" value=">" onclick="siguiente()" /></td>
+										<td><input type="button" id="" value=">||"onclick="ultimo()"  /></td>
+										<td><input type="button" id="" value="Guardar" onclick="adicion()" /></td>
+										<td><input type="button" id="" value="Borrar"  onclick="borrar()" /></td>			
+									</tr>
+						        </table>
+						    </td>
+						</tr>								
+					  </table>
+		          </div>
+		          <div id="item2">
+					  <br><br>
+				<!--Datos Laborales++++++++++++++++++++++++++++++++++++++++++-->
+					  <table>
+		  				 <tr>			
+							<td colspan="4"><br><p>Esta ficha contiene, los datos Laborales de cada trabajador, para sus consultas habituales.</p><br></td>
+						</tr>
+		  				 <tr>			
+							<td colspan="4" class="t1"><center>Datos Laborales Empleados</center></td>
+						</tr>						
+						<tr>
+							<td>Tipo de Contrato:<input type="text" value="" id="tipoc" /></td>
+							<td>Fecha Contrataci&oacute;n:<input type="text" value="" id="fcontrato" /></td>
+							<td>Fecha Fin Contrato:<input type="text" value="" id="ffcontrato" /></td>
+							<td>Departamento:<input type="text" value="" id="departamento" /></td>
+						</tr>
+						<tr>
+							<td>Cargo:<input type="text" value="" id="cargo" /></td>
+							<td>Jefe Inmediato:<input type="text" value="" id="jinmediato" /></td>
+							<td>
+								Estado de Empleado:
+								<Select id="estadoe">
+									<option>Activo</option>
+									<option>InActivo</option>
+								</Select>
+							</td>
+					<!--++++++++++++++++++++++++++++++++++++++++-->		
+							<td>Sueldo Pactado:<input type="" value="" id="sueldo" /></td>							
+						</tr>						
+						<tr>
+							<td colspan="4">Funciones:
+								<textarea id="funciones"></textarea>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4">Correo Institucional:<input type="text" value="" id="emaili" /></textarea></td>
+						</tr>																							
+
+						<tr>
+							<td>EPS:<input type="text" value="" id="eps" /></td>
+							<td>ARP:<input type="text" value="" id="arp" /></td>
+							<td>Fondo de Pensi&oacute;n:<input type="text" value="" id="fonp" /></td>
+							<td>Caja Compensaci&oacute;n:<input type="text" value="" id="cconp" /></td>
+						</tr>
+						<tr>
+							<td colspan="4">Historial:<textarea id="historial"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan="4">Observaciones:<textarea id="obs1"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan="4">&nbsp;</td>
+						</tr>							
+						<tr>
+						    <td colspan="4">
+						        <table>
+									<tr>
+										<td><input type="button" id="inicio" value="||<" onclick="primeroDL()" /></td>
+										<td><input type="button" id="anterior" value="<" onclick="anteriorDL()"/></td>
+										<td><input type="button" id="siguiente" value=">" onclick="siguienteDL()" /></td>
+										<td><input type="button" id="" value=">||" onclick="ultimoDL()" /></td>
+										<td><input type="button" id="" value="Guardar" onclick="datosNomina()" /></td>
+										<td><input type="button" id="" value="Borrar" onclick="borrarDN()" /><td>	
+									</tr>
+						        </table><td>																							
+					  </table>
+				  
+				  </div>
+		          <div id="item3">
+					  <br><br>
+					<!--Nomina+++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+					  <table>
+		  				 <tr>			
+							<td colspan="5"><br><p>Esta ficha contiene, los datos N&oacute;mina de cada trabajador, para sus consultas habituales.</p><br></td>
+						</tr>
+						<tr>
+ 					        <td colspan="5" class="t1"><center>Liquidaci&oacute;n del Sueldo Devengado</center></td>
+						</tr> 
+						<tr>
+						    <td>Sueldo Pactado:<input type="" value="" id="sueldop"  /></td>
+						    <td>Horas Trabajadas:<input type="" value="" id="htrab" /></td>
+						    <td>Horas Ext Diurnas:<input type="" value="" id="hed" /></td>
+						    <td>Horas Ext Nocturna:<input type="" value="" id="hen" /></td>
+						    <td>Horas Ext Festivas:<input type="" value="" id="hef" /></td>
+						</tr>	
+						<tr>
+						    <td>Valor Hora Normal:<input type="" value="" id="vhn" /></td>
+						    <td>Total Horas Ext Diurnas:<input type="" value="" id="thed" /></td>
+						    <td>Total Horas Ext Nocturnas:<input type="" value="" id="then" /></td>
+						    <td>Total Horas Ext Festivas:<input type="" value="" id="thef" /></td>
+						    <td>Total Horas Extras:<input type="" value="" id="vthe" /></td>
+						</tr>	
+						<tr>
+						    <td>Subsidio Transporte:<input type="" value="" id="st" /></td>
+						    <td>Bonificaci&oacute;n:<input type="" value="" id="bon" /></td>
+						    <td>Comisi&oacute;n:<input type="" value="" id="com" /></td>
+						    <td>Otros Devengados:<input type="" value="" id="odev" /></td>
+						   <!-- <td>Total Horas Extras:<input type="" value="" id="vthe" /></td>-->
+						</tr>	
+						<tr>
+						    <td colspan="5">Total Devengado:<input type="" value="" id="tdev" /></td>
+						</tr>	
+						<tr>
+ 					        <td colspan="5" >&nbsp;</td>
+						</tr> 						
+						<tr>
+ 					        <td colspan="5" class="t1"><center>Deducciones al Sueldo de Empleado</center></td>
+						</tr> 
+						<tr>
+						    <td>Salud:<input type="" value="" id="salud" /></td>
+						    <td>Pensi&oacute;n:<input type="" value="" id="pension" /></td>
+						    <td>Cooperativa:<input type="" value="" id="coop" /></td>
+						    <td>Retenci&oacute;n:<input type="" value="" id="ret" /></td>
+						    <td>Caja:<input type="" value="" id="cajacomp" /></td>
+						</tr>	
+						<tr>
+						    <td>Prestamos:<input type="" value="" id="prestamo" /></td>
+						    <td>Cuota:<input type="" value="" id="cuota" /></td>
+						    <td>Otras Deducciones:<input type="" value="" id="oded" /></td>
+						    <td colspan="2">Acciones:<input type="button" value="Calcular.." id="calculo" onclick="cNomina()" /></td>
+
+						</tr>	
+												
+						<tr>
+						    <td colspan="5">Total Deducido:<input type="" value="" id="tded" /></td>
+						</tr>
+						<tr>
+ 					        <td colspan="5" >&nbsp;</td>
+						</tr> 							
+						<tr>
+						    <td colspan="5">Despu&eacute;s de haber calculado el devengado y el total de los descuentos, hallamos el neto, correspondiente a la diferencia entre el devengado y el deducido.</td>
+						</tr>											
+						<tr>
+ 					        <td colspan="5" >&nbsp;</td>
+						</tr> 												
+						<tr>
+						    <td colspan="5" class="t1">Total Neto:<input type="" value="" id="tneto" /></td>
+						</tr>
+						<tr>
+							<td colspan="5">&nbsp;</td>
+						</tr>							
+						<tr>
+						    <td colspan="5">
+						        <table>
+									<tr>
+										<td><input type="button" id="inicio" onclick="primeroCN()" value="||<" /></td>
+										<td><input type="button" id="anterior" value="<" onclick="anteriorCN()"/></td>
+										<td><input type="button" id="siguiente" value=">" onclick="siguienteCNom()" /></td>
+										<td><input type="button" id="ultimo" onclick="ultimoCN()" value=">||" /></td>
+										<td><input type="button" id="" value="Guardar" onclick="guardarCNomina()"/></td>
+										<td><input type="button" id="" value="Borrar" onclick="borrarCN()" /></td>			
+									</tr>
+						        </table>
+						    </td>												
+					  </table>		          
+		          </div>
+		          <div id="default">
+		              <center>
+						<br><br>
+						<h3>********Aplicaci&oacute;n Java Script de Referencia*******</h3>
+						<br><br>
+						<p>
+						   Este programa, es una modelo para que los estudiantes lo usen con el fin de colocar a prueba su concimiento de Java Scrip.<br><br>
+						   Creado por Waldo jim&eacute;nez Pinto con un prop&oacute;cito educativo.<br><br><br>
+						   <strong>Objetivo:</strong><br><br>
+						   El estudiante, deber&aacute; programar las validaciones de los campos en cada formulario, realizando los c&aacute;lculos correspondientes en la liquidaci&oacute;n del empleado que deber&aacute; 
+						   realizarse con el bot&oacute;n <strong>Calcular</strong>.  Adem&aacute;s, 
+						   debe poner a funcionar cada bot&oacute;n para que el usuario, pueda navegar a trav&eacute;s de los diferentes empleados registrados.<br><br><br>
+						   <strong>Proyecto:</strong><br><br>
+						   Basado en este modelo, los estudiantes, deber&aacute;n crear un aplicativo capaz de manejar la informaci&oacute;n en un proceso de negocios, como:  Inventarios, N&oacute;minas, etc., que puedan 
+						   ser aplicados.<br><br><br>
+						   <strong>A cerca del Modelo.</strong><br><br>
+						   Este modelo fu&eacute; creado en su totalidad en el lenguaje de marcado de hiper texto HTML y el lenguaje de definici&oacute;n de estilos en cascada CSS, por Waldo Jimenez Pinto<br><br><br><br>
+						   <strong>Bogot&aacute; D.C., Octubre de 2018.</strong>    
+						</p>
+		              </center>
+		          </div>
+	          </div> 
+	      </div>
+	      <div id="pie">  
+	          Direcci&oacute;n: carrera 44a # 63-24,  tel&eacute;fonos 2 11 70 28 - 2 11 78 88, email info@cooperativacootanxx.com, P&aacute;gina Web http://www.cootanxx.com<br>
+	          Reservados todos los derechos de autor, bajo licencia Copyright 2018.
+	      </div>
+	  </div>
+  </BODY>
+</HTML>
